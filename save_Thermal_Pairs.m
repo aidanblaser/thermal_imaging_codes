@@ -196,6 +196,7 @@ for i=start:2:stop-1
     
     % Save therm as structure
     therm.filename = filename_therm(1:end-4);
+    therm.time = datetime(table_therm.DateTimeOriginal,'InputFormat','yyyy:MM:dd HH:mm:ss');
     therm.image = image_therm;
     therm.image_celsius = image_therm_celsius;
     therm.altitude = altitude_therm_corrected;
@@ -213,6 +214,7 @@ for i=start:2:stop-1
     
     % Save vis as structure
     visible.filename = filename_vis(1:end-4);
+    visible.time = datetime(table_vis.DateTimeOriginal,'InputFormat','yyyy:MM:dd HH:mm:ss');
     visible.image = image_vis;
     visible.altitude = altitude_vis_corrected;
     visible.table = table_vis;
