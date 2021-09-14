@@ -235,7 +235,10 @@ for i=start:2:stop-1
     
     % Name of files
     name = sprintf('%04d',counter);
+    % Get folder name of dirin for naming
+    slashes = strfind(dirin,'/');
+    dirin_save = dirin(slashes(end-1)+1:end-1);
     
-    save(strcat(dirout,'processed_',name),'DJI_data');
+    save(strcat(dirout,dirin_save,'_processed_',name),'DJI_data');
 
 end
